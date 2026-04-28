@@ -1,0 +1,2575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sargam Musicals | Handcrafted Sound Healing Instruments from Auroville</title>
+    <meta name="description" content="Handcrafted sound healing instruments made with intention in Auroville, India. Chimes, flutes, drums, and outdoor musical gardens by master craftsman Prakash Sathiyadharan.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --sage: #87A878;
+            --soft-blue: #7BA7BC;
+            --terracotta: #C67D5F;
+            --deep-teal: #2E6B6B;
+            --cream: #F5F0EB;
+            --charcoal: #3D3632;
+            --forest: #2C3E35;
+            --white: #FFFFFF;
+            --light-sage: #E8F0E4;
+            --light-terracotta: #F5E6DE;
+            --shadow: rgba(61, 54, 50, 0.08);
+            --shadow-hover: rgba(61, 54, 50, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--sage);
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(245, 240, 235, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px var(--shadow);
+            padding: 0.8rem 5%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--deep-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--deep-teal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--deep-teal);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--deep-teal);
+        }
+
+        .nav-cta {
+            background: var(--deep-teal);
+            color: var(--white) !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--forest);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(46, 107, 107, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--forest) 0%, var(--deep-teal) 50%, var(--sage) 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.25;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(44, 62, 53, 0.7), rgba(46, 107, 107, 0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            padding: 0 2rem;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-badge i {
+            color: var(--terracotta);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--sage);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.4s both;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--deep-teal);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(46, 107, 107, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--forest);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(46, 107, 107, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-terracotta {
+            background: var(--terracotta);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(198, 125, 95, 0.4);
+        }
+
+        .btn-terracotta:hover {
+            background: #b56a4e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(198, 125, 95, 0.5);
+        }
+
+        .audio-toggle {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease 1s both;
+        }
+
+        .audio-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .audio-toggle.playing {
+            background: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: var(--white);
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--terracotta);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--charcoal);
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+
+        /* Featured Collections */
+        .collections {
+            background: var(--white);
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .collection-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 400px;
+            cursor: pointer;
+            box-shadow: 0 10px 40px var(--shadow);
+            transition: all 0.4s ease;
+        }
+
+        .collection-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px var(--shadow-hover);
+        }
+
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .collection-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(44, 62, 53, 0.95), transparent);
+            color: var(--white);
+            transition: all 0.4s ease;
+        }
+
+        .collection-card:hover .collection-overlay {
+            padding-bottom: 2.5rem;
+        }
+
+        .collection-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .collection-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .collection-audio {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .collection-audio:hover {
+            background: var(--terracotta);
+        }
+
+        .collection-audio i {
+            font-size: 0.7rem;
+        }
+
+        /* Products Section */
+        .products {
+            background: var(--cream);
+        }
+
+        .products-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid var(--sage);
+            background: transparent;
+            color: var(--charcoal);
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--deep-teal);
+            border-color: var(--deep-teal);
+            color: var(--white);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px var(--shadow-hover);
+        }
+
+        .product-image {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            background: var(--light-sage);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--terracotta);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .product-audio-btn {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            width: 45px;
+            height: 45px;
+            background: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            color: var(--deep-teal);
+        }
+
+        .product-audio-btn:hover {
+            background: var(--deep-teal);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-category {
+            color: var(--terracotta);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            opacity: 0.7;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(61, 54, 50, 0.1);
+        }
+
+        .product-price {
+            font-weight: 600;
+            color: var(--deep-teal);
+            font-size: 1.1rem;
+        }
+
+        .product-price span {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            font-weight: 400;
+        }
+
+        .product-btn {
+            padding: 0.5rem 1.2rem;
+            background: var(--light-sage);
+            color: var(--deep-teal);
+            border: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .product-btn:hover {
+            background: var(--deep-teal);
+            color: var(--white);
+        }
+
+        /* Story Section */
+        .story {
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-image {
+            position: relative;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px var(--shadow-hover);
+        }
+
+        .story-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--sage);
+            border-radius: 20px;
+            z-index: -1;
+        }
+
+        .story-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--deep-teal);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            opacity: 0.7;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        .story-content p {
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+        }
+
+        .story-features {
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .story-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .story-features li i {
+            color: var(--sage);
+            font-size: 1.1rem;
+        }
+
+        /* Programs Section */
+        .programs {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--deep-teal) 100%);
+            color: var(--white);
+        }
+
+        .programs .section-header h2,
+        .programs .section-header p {
+            color: var(--white);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .program-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+        }
+
+        .program-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--terracotta);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .program-card p {
+            opacity: 0.85;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .program-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: gap 0.3s ease;
+        }
+
+        .program-btn:hover {
+            gap: 0.8rem;
+        }
+
+        /* Musical Garden */
+        .garden {
+            background: var(--cream);
+        }
+
+        .garden-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item.tall {
+            grid-row: span 2;
+            height: auto;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(44, 62, 53, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .garden-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .garden-content p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .garden-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .garden-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .garden-feature i {
+            color: var(--sage);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .garden-feature h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .garden-feature p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin: 0;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonials-carousel {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-style: italic;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sage);
+        }
+
+        .author-info {
+            text-align: left;
+        }
+
+        .author-info h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        .testimonial-rating {
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            width: 45px;
+            height: 45px;
+            border: 2px solid var(--sage);
+            background: transparent;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-teal);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: var(--deep-teal);
+            border-color: var(--deep-teal);
+            color: var(--white);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--sage);
+            opacity: 0.3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            opacity: 1;
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        .media-mentions {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            opacity: 0.5;
+            flex-wrap: wrap;
+        }
+
+        .media-mentions span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(to bottom, var(--cream), var(--white));
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info > p {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-sage);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-teal);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--deep-teal);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: var(--light-sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-teal);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--deep-teal);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid rgba(61, 54, 50, 0.1);
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: var(--cream);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--sage);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(135, 168, 120, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--deep-teal);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: var(--forest);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(46, 107, 107, 0.3);
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            box-shadow: 0 5px 20px var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--forest);
+            color: var(--white);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo-text {
+            color: var(--white);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--sage);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            opacity: 0.7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--sage);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            opacity: 0.5;
+            font-size: 0.85rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            background: #25D366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            display: none;
+            justify-content: space-around;
+            padding: 0.8rem 0;
+            box-shadow: 0 -5px 20px var(--shadow);
+            z-index: 998;
+        }
+
+        .mobile-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 0.7rem;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav a i {
+            font-size: 1.2rem;
+        }
+
+        .mobile-nav a.active,
+        .mobile-nav a:hover {
+            opacity: 1;
+            color: var(--deep-teal);
+        }
+
+        /* Audio Wave Animation */
+        .audio-wave {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            height: 20px;
+        }
+
+        .audio-wave span {
+            width: 3px;
+            background: currentColor;
+            border-radius: 2px;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .audio-wave span:nth-child(1) { animation-delay: 0s; height: 30%; }
+        .audio-wave span:nth-child(2) { animation-delay: 0.1s; height: 60%; }
+        .audio-wave span:nth-child(3) { animation-delay: 0.2s; height: 100%; }
+        .audio-wave span:nth-child(4) { animation-delay: 0.3s; height: 60%; }
+        .audio-wave span:nth-child(5) { animation-delay: 0.4s; height: 30%; }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleY(0.5); }
+            50% { transform: scaleY(1); }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: var(--cream);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--terracotta);
+            color: var(--white);
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .modal-image {
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px 0 0 20px;
+        }
+
+        .modal-info {
+            padding: 2.5rem;
+        }
+
+        .modal-info h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-info .product-category {
+            margin-bottom: 1rem;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            color: var(--deep-teal);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .specs-table {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            border-collapse: collapse;
+        }
+
+        .specs-table td {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(61, 54, 50, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            width: 40%;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .story-container,
+            .garden-showcase,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-image {
+                min-height: 250px;
+            }
+
+            .modal-image img {
+                border-radius: 20px 20px 0 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .mobile-nav {
+                display: flex;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .story-stats {
+                justify-content: center;
+            }
+
+            .garden-features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .audio-toggle {
+                display: none;
+            }
+
+            .whatsapp-float {
+                bottom: 5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="sargam.png" class="logo">
+            <span class="logo-text">Sargam <span>Musicals</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#garden">Musical Garden</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://wa.me/919360666448" class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Enquire Now</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-leaf"></i>
+                <span>Handcrafted in Auroville, India</span>
+            </div>
+            <h1>Handcrafted Instruments for <em>Sound Healing</em> & Inner Peace</h1>
+            <p class="hero-subtitle">Made with intention by master craftsman Prakash Sathiyadharan. Experience the transformative power of authentic sound healing instruments.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">
+                    <i class="fas fa-compact-disc"></i> Explore Instruments
+                </a>
+                <a href="#story" class="btn btn-outline">
+                    <i class="fas fa-play-circle"></i> Watch Our Story
+                </a>
+            </div>
+        </div>
+        <button class="audio-toggle" id="audioToggle" onclick="toggleAmbientAudio()">
+            <div class="audio-wave" id="audioWave" style="display:none;">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <i class="fas fa-volume-mute" id="audioIcon"></i>
+            <span id="audioText">Experience the Sound</span>
+        </button>
+        <div class="scroll-indicator" onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="collections" id="collections">
+        <div class="section-header reveal">
+            <span class="section-label">Curated For You</span>
+            <h2>Explore Our Collections</h2>
+            <p>Discover instruments crafted for meditation, healing circles, outdoor spaces, and beginners alike.</p>
+        </div>
+        <div class="collections-grid">
+            <div class="collection-card reveal" onclick="filterProducts('chimes')">
+                <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=600&q=80" alt="Chimes for Meditation">
+                <div class="collection-overlay">
+                    <h3>Chimes for Meditation</h3>
+                    <p>Swinging chimes, angel chimes & wind chimes tuned for deep relaxation</p>
+                    <div class="collection-audio">
+                        <i class="fas fa-play"></i> Preview Sound
+                    </div>
+                </div>
+            </div>
+            <div class="collection-card reveal" onclick="filterProducts('drums')">
+                <img src="https://images.unsplash.com/photo-1543443374-b6fe10a62d43?auto=format&fit=crop&w=600&q=80" alt="Drums for Healing Circles">
+                <div class="collection-overlay">
+                    <h3>Drums for Healing Circles</h3>
+                    <p>Frame drums, ocean drums & percussion for group sound journeys</p>
+                    <div class="collection-audio">
+                        <i class="fas fa-play"></i> Preview Sound
+                    </div>
+                </div>
+            </div>
+            <div class="collection-card reveal" onclick="filterProducts('outdoor')">
+                <img src="https://images.unsplash.com/photo-1564429238984-b3cd3a5ba0b4?auto=format&fit=crop&w=600&q=80" alt="Outdoor Musical Gardens">
+                <div class="collection-overlay">
+                    <h3>Outdoor Musical Gardens</h3>
+                    <p>Weather-resistant instruments for parks, schools & wellness spaces</p>
+                    <div class="collection-audio">
+                        <i class="fas fa-play"></i> Preview Sound
+                    </div>
+                </div>
+            </div>
+            <div class="collection-card reveal" onclick="filterProducts('beginner')">
+                <img src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?auto=format&fit=crop&w=600&q=80" alt="Beginner's Collection">
+                <div class="collection-overlay">
+                    <h3>Beginner's Collection</h3>
+                    <p>Start your sound healing journey with our curated starter instruments</p>
+                    <div class="collection-audio">
+                        <i class="fas fa-play"></i> Preview Sound
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="section-header reveal">
+            <span class="section-label">Our Instruments</span>
+            <h2>Handcrafted Sound Healing Instruments</h2>
+            <p>Each instrument is meticulously tuned and crafted using traditional techniques passed down through generations.</p>
+        </div>
+        <div class="products-filter reveal">
+            <button class="filter-btn active" onclick="filterProducts('all')">All Instruments</button>
+            <button class="filter-btn" onclick="filterProducts('chimes')">Chimes & Bars</button>
+            <button class="filter-btn" onclick="filterProducts('flutes')">Flutes & Wind</button>
+            <button class="filter-btn" onclick="filterProducts('drums')">Drums & Percussion</button>
+            <button class="filter-btn" onclick="filterProducts('outdoor')">Outdoor Garden</button>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be populated by JS -->
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="story-container">
+            <div class="story-image reveal">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80" alt="Prakash Sathiyadharan crafting instruments">
+            </div>
+            <div class="story-content reveal">
+                <span class="section-label">Our Story</span>
+                <h2>From Village Youth to Master Craftsman</h2>
+                <p>Prakash Sathiyadharan began his musical journey at age 16, dedicating 16 years to Svaram — Auroville's renowned musical instrument unit. His passion led him to earn a degree in West African drumming and perform internationally across Thailand and Vietnam.</p>
+                <p>Today, Sargam Musicals creates authentic sound healing instruments while teaching village youth the craft as a sustainable livelihood. Every instrument carries the spirit of Auroville's conscious living philosophy.</p>
+                <ul class="story-features">
+                    <li><i class="fas fa-check-circle"></i> 100% Handcrafted in Auroville</li>
+                    <li><i class="fas fa-check-circle"></i> Sustainably Sourced Materials</li>
+                    <li><i class="fas fa-check-circle"></i> Traditional Tuning Methods</li>
+                    <li><i class="fas fa-check-circle"></i> Youth Artisan Training Program</li>
+                </ul>
+                <div class="story-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">16+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Instruments Crafted</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Youth Trained</span>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-users"></i> Meet Our Artisans
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="section-header reveal">
+            <span class="section-label" style="color: var(--sage);">Experiences</span>
+            <h2>Sound Healing Programs</h2>
+            <p>Immerse yourself in the transformative power of sound through our workshops, sessions, and training programs.</p>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card reveal">
+                <div class="program-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3>Sound Healing Sessions</h3>
+                <p>Individual and group sessions using carefully sequenced instruments to guide you into deep relaxation and subconscious healing.</p>
+                <div class="program-meta">
+                    <span><i class="far fa-clock"></i> 60-90 min</span>
+                    <span><i class="fas fa-user-friends"></i> 1-20 people</span>
+                </div>
+                <a href="#contact" class="program-btn">Book a Session <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">
+                    <i class="fas fa-drum"></i>
+                </div>
+                <h3>Drumming Circles</h3>
+                <p>Community drumming experiences rooted in West African traditions. Build connection, rhythm, and collective energy.</p>
+                <div class="program-meta">
+                    <span><i class="far fa-clock"></i> 2 hours</span>
+                    <span><i class="fas fa-user-friends"></i> 10-50 people</span>
+                </div>
+                <a href="#contact" class="program-btn">Join a Circle <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">
+                    <i class="fas fa-hammer"></i>
+                </div>
+                <h3>Instrument Making Workshops</h3>
+                <p>Learn the art of crafting your own sound healing instrument under Prakash's guidance. From raw material to tuned instrument.</p>
+                <div class="program-meta">
+                    <span><i class="far fa-clock"></i> 1-3 days</span>
+                    <span><i class="fas fa-user-friends"></i> 5-15 people</span>
+                </div>
+                <a href="#contact" class="program-btn">Reserve Your Spot <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Corporate Wellness</h3>
+                <p>Bring sound healing to your workplace. Reduce stress, improve focus, and build team connection through guided sonic experiences.</p>
+                <div class="program-meta">
+                    <span><i class="far fa-clock"></i> Flexible</span>
+                    <span><i class="fas fa-user-friends"></i> Custom</span>
+                </div>
+                <a href="#contact" class="program-btn">Enquire Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">
+                    <i class="fas fa-child"></i>
+                </div>
+                <h3>School Programs</h3>
+                <p>Introduce children to the joy of music and rhythm through interactive instrument exploration and folk dance performances.</p>
+                <div class="program-meta">
+                    <span><i class="far fa-clock"></i> 45-90 min</span>
+                    <span><i class="fas fa-user-friends"></i> Class size</span>
+                </div>
+                <a href="#contact" class="program-btn">Plan a Visit <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="program-card reveal">
+                <div class="program-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h3>Folk Dance & Performances</h3>
+                <p>Authentic Tamil folk dance and African drumming performances for events, festivals, and cultural celebrations.</p>
+                <div class="program-meta">
+                    <span><i class="far fa-clock"></i> 30-60 min</span>
+                    <span><i class="fas fa-user-friends"></i> Ensemble</span>
+                </div>
+                <a href="#contact" class="program-btn">Book Performance <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Musical Garden -->
+    <section class="garden" id="garden">
+        <div class="garden-showcase">
+            <div class="gallery-grid reveal">
+                <div class="gallery-item tall">
+                    <img src="https://images.unsplash.com/photo-1564429238984-b3cd3a5ba0b4?auto=format&fit=crop&w=600&q=80" alt="Musical Garden Installation">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=400&q=80" alt="Outdoor Xylophone">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1543443374-b6fe10a62d43?auto=format&fit=crop&w=400&q=80" alt="Drum Installation">
+                    <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+                </div>
+            </div>
+            <div class="garden-content reveal">
+                <span class="section-label">Outdoor Installations</span>
+                <h2>Musical Gardens</h2>
+                <p>Transform parks, schools, beaches, and wellness centers into interactive soundscapes. Our weather-resistant outdoor instruments invite spontaneous musical exploration for all ages.</p>
+                <p>From concept to installation, we design custom musical gardens that harmonize with your space and community.</p>
+                <div class="garden-features">
+                    <div class="garden-feature">
+                        <i class="fas fa-sun"></i>
+                        <div>
+                            <h4>Weather Resistant</h4>
+                            <p>Built to withstand outdoor conditions</p>
+                        </div>
+                    </div>
+                    <div class="garden-feature">
+                        <i class="fas fa-universal-access"></i>
+                        <div>
+                            <h4>All Ages Accessible</h4>
+                            <p>Designed for inclusive play</p>
+                        </div>
+                    </div>
+                    <div class="garden-feature">
+                        <i class="fas fa-palette"></i>
+                        <div>
+                            <h4>Custom Design</h4>
+                            <p>Tailored to your space & theme</p>
+                        </div>
+                    </div>
+                    <div class="garden-feature">
+                        <i class="fas fa-tools"></i>
+                        <div>
+                            <h4>Full Installation</h4>
+                            <p>From planning to completion</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-terracotta">
+                    <i class="fas fa-seedling"></i> Plan Your Musical Garden
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header reveal">
+            <span class="section-label">Testimonials</span>
+            <h2>What Our Community Says</h2>
+            <p>Stories from sound healers, yoga studios, and wellness centers who have experienced the Sargam difference.</p>
+        </div>
+        <div class="testimonials-carousel reveal">
+            <div class="testimonial-slide active">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"The swinging chimes from Sargam have completely transformed my sound healing sessions. The resonance is unlike anything I've experienced — pure, sustained, and deeply calming for my clients."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Ananya Sharma" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Ananya Sharma</h4>
+                        <p>Sound Healing Practitioner, Bangalore</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"We installed a musical garden at our school in Delhi, and the children absolutely love it. It's become a space for creative expression, collaboration, and pure joy. Prakash and his team were professional from start to finish."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Rajiv Menon" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Rajiv Menon</h4>
+                        <p>Principal, Green Valley School, Delhi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slide">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="testimonial-text">"Prakash's drumming circle workshop brought our corporate team closer than any trust-building exercise ever could. The energy was incredible, and the instruments are beautifully crafted."</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="Priya Nair" class="author-avatar">
+                    <div class="author-info">
+                        <h4>Priya Nair</h4>
+                        <p>HR Director, TechFlow Solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <button class="carousel-btn" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToSlide(0)"></span>
+                    <span class="dot" onclick="goToSlide(1)"></span>
+                    <span class="dot" onclick="goToSlide(2)"></span>
+                </div>
+                <button class="carousel-btn" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <div class="media-mentions reveal">
+            <span><i class="far fa-newspaper"></i> As Featured in DT NEXT</span>
+            <span><i class="fas fa-award"></i> Auroville Certified</span>
+            <span><i class="fas fa-leaf"></i> Sustainable Craft</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header reveal">
+            <span class="section-label">Get in Touch</span>
+            <h2>Begin Your Sound Healing Journey</h2>
+            <p>Whether you're looking for a specific instrument, planning a musical garden, or booking a workshop — we'd love to hear from you.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info reveal">
+                <h2>Visit Our Workshop</h2>
+                <p>Located in the heart of Auroville, our workshop is open for visits by appointment. Experience the instruments firsthand and meet the artisans.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Workshop Address</h4>
+                            <p>1st Floor, Isaiambalam Road, Alankuppam,<br>Auroville, Puducherry - 605111, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/919360666448" target="_blank">+91 93606 66448</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+919080111076">+91 90801 11076</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:sargammusicalinstrument@gmail.com">sargammusicalinstrument@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.1234567890123!2d79.8123!3d12.0056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDAwJzIwLjIiTiA3OcKwNDgnNDQuMyJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="contact-form reveal">
+                <form onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Your last name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">I'm Interested In</label>
+                        <select id="interest" name="interest">
+                            <option value="">Select an option</option>
+                            <option value="instruments">Purchasing Instruments</option>
+                            <option value="workshop">Sound Healing Workshop</option>
+                            <option value="drumming">Drumming Circle</option>
+                            <option value="garden">Musical Garden Installation</option>
+                            <option value="corporate">Corporate Wellness Program</option>
+                            <option value="performance">Folk Dance Performance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your requirements, questions, or ideas..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="logo-text">Sargam <span style="color: var(--sage);">Musicals</span></span>
+                <p>Handcrafted sound healing instruments made with intention in Auroville, India. Preserving traditional crafts while empowering village youth.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://wa.me/919360666448" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#products">Chimes & Bars</a></li>
+                    <li><a href="#products">Flutes & Wind</a></li>
+                    <li><a href="#products">Drums & Percussion</a></li>
+                    <li><a href="#products">Outdoor Garden</a></li>
+                    <li><a href="#products">Beginner's Collection</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="#programs">Sound Healing Sessions</a></li>
+                    <li><a href="#programs">Drumming Circles</a></li>
+                    <li><a href="#programs">Workshops</a></li>
+                    <li><a href="#programs">Corporate Wellness</a></li>
+                    <li><a href="#programs">School Programs</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#story">Our Craft</a></li>
+                    <li><a href="#story">Our Team</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> Handcrafted with <i class="fas fa-heart" style="color: var(--terracotta);"></i> in Auroville, India</p>
+            <p>Sargam Musicals. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919360666448" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+    </a>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="mobile-nav">
+        <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="#products"><i class="fas fa-compact-disc"></i> Shop</a>
+        <a href="#programs"><i class="fas fa-calendar-alt"></i> Programs</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+
+    <!-- Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product Data
+        const products = [
+            {
+                id: 1,
+                name: "Swinging Chimes (9 Bar)",
+                category: "chimes",
+                price: "₹4,500",
+                description: "Hand-tuned aluminum chimes that produce ethereal, sustained tones perfect for meditation and sound healing sessions.",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Hand-tuned Aluminum", dimensions: "45cm x 15cm", weight: "800g", tuning: "Pentatonic C Major", notes: "9 bars" }
+            },
+            {
+                id: 2,
+                name: "Ohm Healing Chimes",
+                category: "chimes",
+                price: "₹3,200",
+                description: "Tuned to the universal Ohm frequency (136.1Hz) for deep grounding and chakra alignment during healing practices.",
+                image: "https://images.unsplash.com/photo-1525926477800-7a3beaa09d54?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Brass & Aluminum", dimensions: "35cm x 12cm", weight: "600g", tuning: "136.1Hz (Ohm)", notes: "6 bars" }
+            },
+            {
+                id: 3,
+                name: "Angel Chimes",
+                category: "chimes",
+                price: "₹2,800",
+                description: "Delicate, high-frequency chimes that create a celestial atmosphere. Ideal for energy clearing and space harmonization.",
+                image: "https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Silver-plated Aluminum", dimensions: "30cm x 10cm", weight: "400g", tuning: "High Octave E", notes: "8 bars" }
+            },
+            {
+                id: 4,
+                name: "Clay Ocarina",
+                category: "flutes",
+                price: "₹1,800",
+                description: "Hand-molded clay ocarina with a warm, earthy tone. Perfect for personal meditation and breathwork practices.",
+                image: "https://images.unsplash.com/photo-1573871669414-010dbf73ca84?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Terracotta Clay", dimensions: "15cm x 10cm", weight: "300g", tuning: "Alto C", notes: "12 holes" }
+            },
+            {
+                id: 5,
+                name: "Double Drone Flute",
+                category: "flutes",
+                price: "₹3,500",
+                description: "Native American style flute with dual chambers creating rich harmonic overtones. Ideal for sound journey facilitation.",
+                image: "https://images.unsplash.com/photo-1516280440614-6697288d5d38?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Sheesham Wood", dimensions: "50cm x 6cm", weight: "350g", tuning: "A Minor", notes: "6 holes" }
+            },
+            {
+                id: 6,
+                name: "Bird Flute Set",
+                category: "flutes",
+                price: "₹1,200",
+                description: "Set of 3 bird-call flutes mimicking native Indian songbirds. Wonderful for nature connection and children's programs.",
+                image: "https://images.unsplash.com/photo-1460039230329-eb070fc6c77c?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Bamboo", dimensions: "20cm x 3cm each", weight: "150g", tuning: "Varied", notes: "3 pieces" }
+            },
+            {
+                id: 7,
+                name: "Ocean Drum",
+                category: "drums",
+                price: "₹2,200",
+                description: "Sealed frame drum containing steel beads that create soothing ocean wave sounds when tilted. Essential for relaxation sessions.",
+                image: "https://images.unsplash.com/photo-1543443374-b6fe10a62d43?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Sheesham Wood & Goat Skin", dimensions: "30cm diameter", weight: "700g", tuning: "N/A", notes: "Bead filled" }
+            },
+            {
+                id: 8,
+                name: "Frame Drum",
+                category: "drums",
+                price: "₹2,800",
+                description: "Traditional single-headed frame drum with natural goat skin. Versatile instrument for drumming circles and shamanic journeying.",
+                image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Sheesham Wood & Goat Skin", dimensions: "40cm diameter", weight: "900g", tuning: "Natural", notes: "Single head" }
+            },
+            {
+                id: 9,
+                name: "Rain Rattle",
+                category: "drums",
+                price: "₹1,500",
+                description: "Bamboo tube filled with seeds that creates authentic rainstick sounds. Lightweight and perfect for transport to sessions.",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Bamboo & Seeds", dimensions: "60cm x 5cm", weight: "400g", tuning: "N/A", notes: "Seed cascade" }
+            },
+            {
+                id: 10,
+                name: "Metallophone (with Resonator)",
+                category: "outdoor",
+                price: "₹18,500",
+                description: "Professional-grade metallophone with built-in resonators for amplified sustain. Perfect for outdoor musical gardens and therapy centers.",
+                image: "https://images.unsplash.com/photo-1564429238984-b3cd3a5ba0b4?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Hardened Steel & Teak", dimensions: "120cm x 40cm", weight: "15kg", tuning: "Diatonic C Major", notes: "15 bars" }
+            },
+            {
+                id: 11,
+                name: "Tubular Bells (Outdoor)",
+                category: "outdoor",
+                price: "₹12,000",
+                description: "Heavy-duty aluminum tubular bells designed for permanent outdoor installation. Weather-resistant powder coating included.",
+                image: "https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Marine-grade Aluminum", dimensions: "150cm x 30cm", weight: "12kg", tuning: "Pentatonic G", notes: "8 tubes" }
+            },
+            {
+                id: 12,
+                name: "Vibing Stone (Lithophone)",
+                category: "outdoor",
+                price: "₹8,500",
+                description: "Natural granite stone carved to produce resonant tones when struck. A unique addition to any sensory garden or playground.",
+                image: "https://images.unsplash.com/photo-1564429238984-b3cd3a5ba0b4?auto=format&fit=crop&w=600&q=80",
+                specs: { material: "Granite Stone", dimensions: "40cm x 30cm x 20cm", weight: "25kg", tuning: "Natural Stone", notes: "2 tones" }
+            }
+        ];
+
+        // Render Products
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('productsGrid');
+            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+            
+            grid.innerHTML = filtered.map(product => `
+                <div class="product-card reveal" data-category="${product.category}">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                        ${product.category === 'outdoor' ? '<span class="product-badge">Outdoor</span>' : ''}
+                        <button class="product-audio-btn" onclick="playProductAudio(event, ${product.id})" aria-label="Listen to ${product.name}">
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${product.category === 'chimes' ? 'Chimes & Bars' : product.category === 'flutes' ? 'Flutes & Wind' : product.category === 'drums' ? 'Drums & Percussion' : 'Outdoor Garden'}</span>
+                        <h3>${product.name}</h3>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-meta">
+                            <span class="product-price">${product.price} <span>onwards</span></span>
+                            <button class="product-btn" onclick="openProductModal(${product.id})">Enquire Now</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-trigger reveal animations
+            setTimeout(() => {
+                document.querySelectorAll('.product-card.reveal').forEach(el => {
+                    el.classList.add('active');
+                });
+            }, 100);
+        }
+
+        // Filter Products
+        function filterProducts(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderProducts(category);
+        }
+
+        // Product Modal
+        function openProductModal(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            document.getElementById('modalBody').innerHTML = `
+                <div class="modal-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="modal-info">
+                    <span class="product-category">${product.category === 'chimes' ? 'Chimes & Bars' : product.category === 'flutes' ? 'Flutes & Wind' : product.category === 'drums' ? 'Drums & Percussion' : 'Outdoor Garden'}</span>
+                    <h2>${product.name}</h2>
+                    <div class="modal-price">${product.price}</div>
+                    <p class="modal-description">${product.description}</p>
+                    <table class="specs-table">
+                        <tr><td>Material</td><td>${product.specs.material}</td></tr>
+                        <tr><td>Dimensions</td><td>${product.specs.dimensions}</td></tr>
+                        <tr><td>Weight</td><td>${product.specs.weight}</td></tr>
+                        <tr><td>Tuning</td><td>${product.specs.tuning}</td></tr>
+                        <tr><td>Notes</td><td>${product.specs.notes}</td></tr>
+                    </table>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                        <a href="https://wa.me/919360666448?text=Hi, I'm interested in the ${encodeURIComponent(product.name)}. Please share more details." class="btn btn-primary" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                        </a>
+                        <button class="btn btn-outline" style="color:var(--charcoal);border-color:var(--charcoal);" onclick="closeModal()">
+                            <i class="fas fa-times"></i> Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('productModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on outside click
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Audio Simulation
+        let audioPlaying = false;
+        function toggleAmbientAudio() {
+            const btn = document.getElementById('audioToggle');
+            const icon = document.getElementById('audioIcon');
+            const text = document.getElementById('audioText');
+            const wave = document.getElementById('audioWave');
+            
+            audioPlaying = !audioPlaying;
+            
+            if (audioPlaying) {
+                btn.classList.add('playing');
+                icon.className = 'fas fa-volume-up';
+                text.textContent = 'Playing Healing Tones';
+                wave.style.display = 'flex';
+            } else {
+                btn.classList.remove('playing');
+                icon.className = 'fas fa-volume-mute';
+                text.textContent = 'Experience the Sound';
+                wave.style.display = 'none';
+            }
+        }
+
+        function playProductAudio(event, id) {
+            event.stopPropagation();
+            const btn = event.currentTarget;
+            const icon = btn.querySelector('i');
+            
+            // Simulate audio play
+            icon.className = 'fas fa-wave-square';
+            btn.style.background = 'var(--terracotta)';
+            btn.style.color = 'var(--white)';
+            
+            setTimeout(() => {
+                icon.className = 'fas fa-play';
+                btn.style.background = '';
+                btn.style.color = '';
+            }, 3000);
+        }
+
+        // Testimonials Carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                dots[i].classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+        }
+
+        function changeSlide(direction) {
+            let newIndex = currentSlide + direction;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            showSlide(newIndex);
+        }
+
+        function goToSlide(index) {
+            showSlide(index);
+        }
+
+        // Auto-advance carousel
+        setInterval(() => changeSlide(1), 6000);
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Active nav link
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+
+                if (scrollPos >= top && scrollPos < top + height) {
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                    document.querySelectorAll('.mobile-nav a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Form Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Enquiry Sent!';
+                btn.style.background = 'var(--sage)';
+                form.reset();
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 3000);
+            }, 1500);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>'''
+
+# Save the file
+with open('/mnt/agents/output/sargam_musicals_website.html', 'w', encoding='utf-8') as f:
+    f.write(html_code)
+
+print("Website saved successfully!")
+print(f"Total lines: {len(html_code.splitlines())}")
+print(f"File size: {len(html_code)} characters")
