@@ -68,19 +68,15 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 1.2rem 5%;
+            padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.4s ease;
-        }
-
-        .navbar.scrolled {
             background: rgba(245, 240, 235, 0.92);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 2px 20px var(--shadow);
-            padding: 0.8rem 5%;
+            transition: all 0.4s ease;
         }
 
         .logo {
@@ -102,16 +98,16 @@
             font-size: 1.2rem;
         }
 
-        .logo-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--charcoal);
-            letter-spacing: -0.5px;
+        .logo img {
+            height: 40px;
+            width: auto;
+            transition: all 0.4s ease;
         }
 
-        .logo-text span {
-            color: var(--deep-teal);
+        @media (max-width: 768px) {
+            .logo img {
+                height: 40px;
+            }
         }
 
         .nav-links {
@@ -1612,15 +1608,62 @@
 
         @media (max-width: 768px) {
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(245, 240, 235, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+                z-index: 999;
+                display: flex;
+            }
+
+            .nav-links.active {
+                right: 0;
             }
 
             .mobile-menu-btn {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 28px;
+                height: 18px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                z-index: 1001;
+            }
+
+            .mobile-menu-btn span {
+                width: 100%;
+                height: 2.5px;
+                background-color: var(--charcoal);
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: translateY(7.75px) rotate(45deg);
+            }
+
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: translateY(-7.75px) rotate(-45deg);
             }
 
             .mobile-nav {
-                display: flex;
+                display: none;
             }
 
             section {
@@ -1674,8 +1717,8 @@
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <a href="sargam.png" class="logo">
-            <span class="logo-text">Sargam <span>Musicals</span></span>
+        <a href="#" class="logo">
+            <img src="sargam.png" alt="Sargam Musicals">
         </a>
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
@@ -1686,8 +1729,10 @@
             <li><a href="#contact">Contact</a></li>
             <li><a href="https://wa.me/919360666448" class="nav-cta" target="_blank"><i class="fab fa-whatsapp"></i> Enquire Now</a></li>
         </ul>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-            <i class="fas fa-bars"></i>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </nav>
 
@@ -2474,13 +2519,6 @@
 
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
             // Active nav link
             const sections = document.querySelectorAll('section[id]');
             const scrollPos = window.scrollY + 100;
@@ -2544,8 +2582,30 @@
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const nav = document.querySelector('.nav-links');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            const btn = document.querySelector('.mobile-menu-btn');
+            nav.classList.toggle('active');
+            btn.classList.toggle('active');
+            
+            // Toggle scroll lock
+            if (nav.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         }
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.querySelector('.nav-links');
+                const btn = document.querySelector('.mobile-menu-btn');
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    btn.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
@@ -2564,12 +2624,4 @@
         });
     </script>
 </body>
-</html>'''
-
-# Save the file
-with open('/mnt/agents/output/sargam_musicals_website.html', 'w', encoding='utf-8') as f:
-    f.write(html_code)
-
-print("Website saved successfully!")
-print(f"Total lines: {len(html_code.splitlines())}")
-print(f"File size: {len(html_code)} characters")
+</html>
